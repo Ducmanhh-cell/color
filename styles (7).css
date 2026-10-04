@@ -1,0 +1,193 @@
+/* 
+  BẢNG MÀU ĐƠN TÔNG (MONOCHROMATIC PALETTE) - XANH DƯƠNG
+  - Bậc 1 (Màu chủ đạo Logo): #00ADEE
+  - Bậc 2 (Điểm nhấn ON SALE): #00B2EF
+  - Bậc 4 (Màu nền Hero Banner): #00BFF2
+  - Bậc 7 (Màu nền Nội dung Product Info): #8DD7F7
+  - Bậc 9 (Màu nền Footer): #C6E9FA
+  - Chữ toàn trang: Màu đen (#000000 / #1A1A1A)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Bước 6: Giữ nguyên màu chữ cho toàn bộ trang là màu đen */
+body {
+    background-color: #f4f8fb;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: #00ADEE; /* Bậc 1: Màu Logo chính */
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #C6E9FA; /* Bậc 9 nổi bật trên nền Bậc 1 */
+}
+
+/* Bước 2: Thay đổi màu nền phần Banner/Hero thành màu bậc 4 (#00BFF2) */
+.hero-banner {
+    background-color: #00BFF2; /* Bậc 4 */
+    color: #000000; /* Chữ màu đen theo yêu cầu */
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+.hero-banner h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+/* Product Grid */
+.product-grid {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.product-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 310px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Bước 3: Thay đổi màu nền phần ON SALE/PREVIEW thành màu Bậc 1 (#00ADEE) hoặc Bậc 2 (#00B2EF) */
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #ffffff;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.sale-badge {
+    background-color: #00ADEE; /* Bậc 1 */
+}
+
+.preview-badge {
+    background-color: #00B2EF; /* Bậc 2 */
+}
+
+.product-img img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Bước 4: Đổi màu nền phần nội dung sản phẩm thành màu bậc 7 (#8DD7F7) */
+.product-info {
+    background-color: #8DD7F7; /* Bậc 7 */
+    padding: 20px;
+    color: #000000; /* Màu chữ giữ màu đen */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.product-desc {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #222222;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.btn-buy {
+    background-color: #00ADEE; /* Bậc 1 */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-buy:hover {
+    background-color: #00B2EF; /* Bậc 2 */
+}
+
+/* Bước 5: Đổi màu nền phần footer thành màu bậc 9 (#C6E9FA) */
+.footer {
+    background-color: #C6E9FA; /* Bậc 9 */
+    color: #000000; /* Chữ màu đen */
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 30px;
+    border-top: 2px solid #8DD7F7;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
